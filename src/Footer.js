@@ -4,7 +4,7 @@ export default class Footer extends Component {
   render() {
     return (
       
-      <footer className="p-4 mt-10 bg-gray-100 rounded-lg shadow md:px-6 md:py-8 dark:bg-gray-900">
+      <footer className="mt-10 bg-gray-200 px-5 bg-opacity-50 rounded-lg shadow md:px-6 md:py-8 dark:bg-gray-900">
     <div className="sm:flex sm:items-center sm:justify-between">
         <a href="https://flowbite.com/" className="flex items-center mb-4 sm:mb-0">
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">BMI</span>

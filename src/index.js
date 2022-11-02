@@ -15,12 +15,10 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
     <>
-    <div className='bg-amber-400'>
     <Header />
     <Bmi />
     <Box />
     <Footer />
-    </div>
     </>
 );
 

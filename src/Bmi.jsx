@@ -43,7 +43,9 @@ export default class Bmi extends Component {
         this.setState({ optimalWeight: "Your suggested weight range is between " + low + " - " + high })
         this.setState({ bmi: "Your BMI is: " + Math.round(bmi * 100) / 100 });
 
+
     }
+
 
     submitMe(e) {
         e.preventDefault();
@@ -51,25 +53,28 @@ export default class Bmi extends Component {
     }
 
     render() {
+        let names = ['Ibrahim', 'Dua', 'Ahmad', 'Manar', 'Omar']
+
         return (
             <>
-                <div class="p-4 bg-orange-500 mx-auto w-full max-w-sm bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
-                    <form class="space-y-6" onSubmit={this.submitMe}>
-                        <h1 class="text-xl font-medium text-gray-900 dark:text-white">Calculate Your BMI</h1>
+                <div className="p-4 bg-touch mx-auto w-full max-w-sm rounded-lg border border-gray-400 shadow-md sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
+                    <form className="space-y-6" onSubmit={this.submitMe}>
+                        <h1 className="text-xl font-medium text-gray-50 dark:text-white">Calculate Your BMI</h1>
                         <div>
-                            <label htmlFor="height" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your Height</label>
-                            <input name="height" value={this.state.height} onChange={this.heightChange} type="number" id="height" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Centimeters" required />
+                            <label htmlFor="height" className="block mb-2 text-sm font-medium text-gray-50 dark:text-gray-300">Your Height</label>
+                            <input name="height" value={this.state.height} onChange={this.heightChange} type="number" id="height" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Centimeters" required />
                         </div>
                         <div>
-                            <label htmlFor="weight" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your Weight</label>
-                            <input name="weight" value={this.state.weight} onChange={this.weightChange} type="number" id="weight" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Kilograms" required />
+                            <label htmlFor="weight" className="block mb-2 text-sm font-medium text-gray-50 dark:text-gray-300">Your Weight</label>
+                            <input name="weight" value={this.state.weight} onChange={this.weightChange} type="number" id="weight" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Kilograms" required />
                         </div>
 
-                        <button type="submit" value="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Calculate</button>
+                        <button type="submit" value="submit" className="w-40 text-black bg-yellow-300 hover:bg-orange-400 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Calculate</button>
 
                     </form>
-                {this.state.bmi ? <Box bmi={this.state.bmi} message={this.state.message} optimalWeight={this.state.optimalWeight} /> : null}
+                    {this.state.bmi ? <Box bmi={this.state.bmi} message={this.state.message} optimalWeight={this.state.optimalWeight} /> : null}
                 </div>
+
 
 
             </>
